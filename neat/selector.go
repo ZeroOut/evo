@@ -219,7 +219,7 @@ func adjCounts(rng evo.Random, off []int, cnt, tgt int) {
 	for cnt != tgt {
 		idxs := rng.Perm(len(off))
 		for _, i := range idxs {
-			if off[i] > 0 && off[i]+adj > 0 {
+			if off[i] > 0 && off[i]+adj >= 0 {
 				off[i] += adj
 				cnt += adj
 				if cnt == tgt {
